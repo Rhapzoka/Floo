@@ -1,0 +1,117 @@
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    background: #303030;
+    overflow: hidden;
+}
+
+.ml1 {
+    font-weight: 900;
+    font-size: 3em;
+    color: #f5f5f5;
+}
+
+.ml1 .letter {
+    display: inline-block;
+}
+
+
+.ml1 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml1 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #f5f5f5;
+    transform-origin: 0 0;
+}
+
+.ml1 .line1 {
+    top: 0;
+}
+
+.ml1 .line2 {
+    bottom: 0;
+}
+
+.ml13 {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.ml13 .letter {
+    display: inline-block;
+}
+
+#gambar {
+    margin-bottom: 10px;
+    width: 150px;
+    border-radius: 14px;
+    border: 2px solid #f5f5f5;
+}
+
+
+.tombolmelayang {
+    background: #f5f5f5;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #303030;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    z-index: 13123123123123;
+    right: 30px;
+    bottom: 30px;
+    border: 2px solid #303030;
+
+}
+
+.tombolmelayang:hover {
+    cursor: pointer;
+    background: #303030;;
+    color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+}
+
+
+
