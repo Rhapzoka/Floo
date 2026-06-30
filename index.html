@@ -563,16 +563,6 @@
 
 		        count++;
 
-		        jam.innerHTML = "" + jam.innerHTML + "";
-
-		        setTimeout(function(){
-
-		            jam.innerHTML = jam.innerHTML
-		                .replace("","")
-		                .replace("","");
-
-		        },300);
-
 		        if(count >= 5){
 
 		            clearInterval(beat);
@@ -998,7 +988,7 @@
 				document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
 				t = setTimeout(function() {
 				startTime()
-				}, 500);
+				}, 1000);
 			}
 			startTime();
 			function init_auto(){
@@ -1065,11 +1055,7 @@
 					setTimeout(typeWriter, speed);
 				}
 			}
-
-
-					document.getElementById("time").addEventListener("dblclick", function () {
-			   
-			});
+			
 			typeWriter();
 		
 			// ================= FOTO MENGAMBANG =================
