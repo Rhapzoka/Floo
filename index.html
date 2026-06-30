@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html translate="no" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Disa❤</title>
+	<meta name="author" content="Don">
+	<meta name="author-link" content="https://google.com">
+	<link rel="stylesheet" type="text/css" href="css/komponen.css" />
+	<link rel="stylesheet" type="text/css" href="css/animasi.css" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
+	<script src="js/modernizr.custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style type="text/css">
+	  	body{
+	  		overflow: hidden;
+	  		background: black;
+	  		width: 100%;
+	  		height: 100vh;
+	  	}
+	  	.bg{
+	  		width: 100%;
+	  		height: 100vh;
+	  		position: absolute;
+	  		z-index: -1;
+	  	}
+	  	.ubuntu{
+	  		background: linear-gradient(to left,#8942A8,#BA382F);
+	  		opacity: 0;
+	  	}
+	  	.dawn{
+	  		background: linear-gradient(0deg, rgba(133,26,0,1) 3%, rgba(255,51,0,1) 19%, rgba(181,103,47,1) 45%, rgba(52,142,200,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.morning{
+	  		background: linear-gradient(0deg, rgba(255,230,113,1) 0%, rgba(82,167,255,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.noon{
+	  		background: linear-gradient(0deg, rgba(22,183,255,1) 0%, rgba(14,116,223,1) 58%, rgba(1,7,170,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.afternoon{
+	  		background: linear-gradient(0deg, rgba(161,133,255,1) 0%, rgba(0,118,226,1) 61%, rgba(1,81,170,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.sunset{
+	  		background: linear-gradient(0deg, rgba(195,75,42,1) 0%, rgba(129,29,121,1) 8%, rgba(89,1,170,1) 29%, rgba(1,5,79,1) 90%);
+	  		opacity: 0;
+	  	}
+	  	.evening{
+	  		background: linear-gradient(0deg, rgba(0,7,128,1) 0%, rgba(0,3,54,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.midnight{
+	  		background: linear-gradient(0deg, rgba(0,3,60,1) 0%, rgba(0,0,0,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.red{
+	  		background: linear-gradient(90deg, rgba(255,0,255,1) 0%, rgba(255,0,0,1) 50%, rgba(255,255,0,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.green{
+	  		background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(0,255,0,1) 50%, rgba(0,255,255,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.blue{
+	  		background: linear-gradient(90deg, rgba(0,255,255,1) 0%, rgba(0,0,255,1) 50%, rgba(255,0,255,1) 100%);
+	  		opacity: 0;
+	  	}
+	  	.custom{
+	  		background-color: #0079FF;
+	  		opacity: 0;
+	  	}
+	  	.jam,.ucapan,.quotes{
+	  		margin: 0px;
+	  		padding: 0px;
+	  		position: absolute;
+	  		color: #fff;
+	  		transition: all 5s ease, color 1s ease;
+	  	}
+	  	.jam{
+	  		opacity: 0;
+	  		font-size: 100pt;
+	  		left: 50%;
+	  		bottom: 50%;
+	  		transform: translate(-50%,calc(50% - 0px));
+	  		cursor: pointer;
+    		pointer-events: auto;
+    		z-index: 9999;
+	  	}
+	  	.ucapan{
+	  		font-size: 25pt;
+	  		left: 50%;
+	  		bottom: 50%;
+	  		text-align: center;
+	  		transform: translate(-50%,calc(50% + 100px));
+	  	}
+	  	.quotes{
+	  		left: 50%;
+	  		bottom: 0;
+	  		transform: translate(-50%,0%);
+	  		text-align: center;
+	  		font-size: 15pt;
+	  		text-shadow: 0px 0px 10px #000;
+	  		z-index: 2;
+	  	}
+	  	.kontrol{
+	  		margin: 20px;
+	  		background: #fff;
+	  		padding: 20px;
+	  		position: absolute;
+	  		width: 200px;
+	  		border-radius: 10px;
+	  		left: -220px;
+	  		transition: all 1 ease;
+	  		z-index: 99;
+	  	}
+	  	.panah{
+	  		content: '';
+	  		width: 10px;
+	  		height: 10px;
+	  		position: absolute;
+	  		top: calc(50% - 5px);
+	  		right: -30px;
+	  		border: 2px solid rgba(255,255,255,0.2);
+	  		border-bottom: none;
+	  		border-left: none;
+	  		border-radius: 2px;
+	  		border-top-left-radius: 3px;
+	  		border-bottom-right-radius: 3px;
+	  		transform: rotate(45deg);
+	  		z-index: 50;
+	  	}
+	  	#color-picker{
+	  		width: 100%;
+	  	}
+	  	.note{
+			color:white;
+		    transition:all 1.5s ease;
+
+		    opacity:0;
+
+		    position:absolute;
+
+		    left:50%;
+
+		    top:calc(32% + 120px);
+
+		    transform:translateX(-50%);
+
+		    font-size:20pt;
+
+		    text-align:center;
+
+		    width:80vw;
+
+		    z-index:999999;
+	  	}
+  		.kotak li{
+		    position: absolute;
+		    display: block;
+		    list-style: none;
+
+		    bottom: -150px;
+
+		    animation: animate linear infinite;
+
+		    background-size: contain;
+		    background-repeat: no-repeat;
+		    background-position: center;
+		}
+
+  		.bulat{
+  			position: absolute;
+  			width: 600px;
+  			height: 600px;
+  			display: flex;
+  			left:50%;
+	  		bottom: 50%;
+	  		transform: translate(-50%,50%) scale(0);
+	  		transition: 3s all ease;
+  		}
+  		.bulat span:nth-child(1){
+  			position: absolute;
+  			top: 0;
+  			left: 0;
+  			width: 100%;
+  			height: 100%;
+  			border: 2px solid #fff;
+  			border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  			transition: 0.5s;
+  			animation: animate2 6s linear infinite;
+  		}
+  		.bulat span:nth-child(2){
+  			position: absolute;
+  			top: 0;
+  			left: 0;
+  			width: 100%;
+  			height: 100%;
+  			border: 2px solid #fff;
+  			border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  			transition: 0.5s;
+  			animation: animate3 4s linear infinite;
+  		}
+  		.bulat span:nth-child(3){
+  			position: absolute;
+  			top: 0;
+  			left: 0;
+  			width: 100%;
+  			height: 100%;
+  			border: 5px solid #fff;
+  			border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  			transition: 0.5s;
+  			animation: animate2 10s linear infinite;
+  		}
+  		.don{
+  			position:
+  			font-size: 1px;
+  			color: #000000;
+  			bottom: 0px;
+  			right: 0px;
+  			opacity: 0.0;
+  		}
+		 @keyframes animate{
+		    0%{
+		         transform: translate(0,0);
+        		opacity:0;
+		    }
+
+		    10%{
+		        opacity:1;
+		    }
+
+		    25%{
+        		transform: translate(-20px,-25vh);
+    		}
+    		50%{
+       			 transform: translate(20px,-50vh);
+   			}
+   			75%{
+        		transform: translate(-15px,-75vh);
+    		}
+
+		    90%{
+		        opacity:1;
+		    }
+
+		    100%{
+		       transform: translate(15px,-100vh);
+        		opacity:0;
+		    }
+		}
+  		@keyframes animate2{
+  			0%{
+  				transform:rotate(0deg);
+  			}
+  			100%{
+  				transform:rotate(360deg);
+  			}
+  		}
+  		@keyframes animate3{
+  			0%{
+  				transform:rotate(360deg);
+  			}
+  			100%{
+  				transform:rotate(0deg);
+  			}
+  		}
+
+  		@keyframes floatPhoto{
+		    0%,100%{
+		        transform:translate(-50%,-50%) scale(1.2);
+		    }
+		    50%{
+		        transform:translate(-50%,-55%) scale(1.2);
+		    }
+		}
+
+  		@keyframes heartbeat {
+		    0%   { transform: translate(-50%,50%) scale(1); }
+		    15%  { transform: translate(-50%,50%) scale(1.15); }
+		    30%  { transform: translate(-50%,50%) scale(1); }
+		    45%  { transform: translate(-50%,50%) scale(1.12); }
+		    60%  { transform: translate(-50%,50%) scale(1); }
+		    100% { transform: translate(-50%,50%) scale(1); }
+		}
+
+		@keyframes loveRain{
+
+			0%{
+			transform:translateY(-100vh);
+			opacity:0;
+			}
+
+			10%{
+			opacity:1;
+			}
+
+			100%{
+			transform:translateY(100vh);
+			opacity:0;
+			}
+
+			}
+
+			.rain-love{
+
+			position:fixed;
+
+			top:-50px;
+
+			font-size:26px;
+
+			z-index:999999;
+
+			animation:loveRain linear forwards;
+
+			pointer-events:none;
+
+			}
+
+			@keyframes pulseLove{
+
+			0%{
+			transform:scale(1);
+			}
+
+			50%{
+			transform:scale(1.12);
+			}
+
+			100%{
+			transform:scale(1);
+			}
+
+			}
+
+			#lovePulse{
+
+			display:inline-block;
+
+			transform-origin:center;
+
+			}
+
+		.heartbeat{
+		    animation: heartbeat .8s ease infinite;
+		    text-shadow:
+		        0 0 10px #ff5a8a,
+		        0 0 20px #ff5a8a,
+		        0 0 40px #ff5a8a;
+		}
+
+		.special-photo{
+		    z-index:99999;
+    transition:all 3s ease;
+
+    overflow:hidden;
+		}
+
+		.special-move{
+
+			animation: floatPhoto 3s ease-in-out infinite !important;
+
+		    position:fixed !important;
+
+		    left:50% !important;
+		    top:30% !important;
+
+		    width:260px !important;
+		    height:260px !important;
+
+		    transform:translate(-50%,-70%) scale(1.2);
+
+		    opacity:1 !important;
+
+			background-size: contain !important;
+			background-repeat: no-repeat !important;
+			background-position: center !important;
+			background-color: transparent !important;
+
+		    transition:all 3s ease;
+		}
+
+  		@media only screen and (max-width: 900px), screen and (max-height: 700px) {
+  			.jam,.ucapan{
+  				transition: all 1s ease;
+  			}
+			.jam{
+		  		font-size: 50pt;
+		  		transform: translate(-50%,calc(50% - 0px));
+		  	}
+		  	.ucapan{
+		  		font-size: 15pt;
+		  		transform: translate(-50%,calc(50% + 50px));
+		  	}
+		  	.quotes,.note{
+		  		font-size: 15pt;
+		  	}
+		  	.bulat{
+	  			width: 300px;
+	  			height: 300px;
+	  		}
+  		}
+  		@media only screen and (max-width: 500px){
+  			.ucapan{
+		  		font-size: 10pt;
+		  	}
+		  	.quotes{
+		  		font-size: 7pt;
+		  	}
+		  	.note{
+		  		font-size: 10pt;
+		  	}
+  		}
+
+  		#loadingScreen{
+
+		position:fixed;
+
+		top:0;
+		left:0;
+
+		width:100%;
+		height:100%;
+
+		background:#000;
+
+		display:flex;
+
+		flex-direction:column;
+
+		justify-content:center;
+
+		align-items:center;
+
+		z-index:999999999;
+
+		color:white;
+
+		font-family:monospace;
+
+		transition:opacity .8s;
+
+		}
+
+		.loadingTitle{
+
+		font-size:42px;
+
+		letter-spacing:8px;
+
+		animation:blink 1s infinite;
+
+		}
+
+		.loadingSub{
+
+		margin-top:15px;
+
+		font-size:18px;
+
+		opacity:.8;
+
+		}
+
+		.loadingBar{
+
+		margin-top:40px;
+
+		width:320px;
+
+		height:22px;
+
+		border:2px solid white;
+
+		padding:3px;
+
+		}
+
+		#loadingFill{
+
+		width:0%;
+
+		height:100%;
+
+		background:white;
+
+		transition:.2s;
+
+		}
+
+		#loadingPercent{
+
+		margin-top:20px;
+
+		font-size:20px;
+
+		}
+
+		@keyframes blink{
+
+		50%{
+
+		opacity:.3;
+
+		}
+
+		}
+
+
+	</style>
+</head>
+
+<body onload="init()">
+		<div id="loadingScreen">
+
+	    <div class="loadingTitle">
+	        LOADING...
+	    </div>
+
+	    <div class="loadingSub">
+	        Almost Ready, My love❤️
+	    </div>
+
+	    <div class="loadingBar">
+
+	        <div id="loadingFill"></div>
+
+	    </div>
+
+	    <div id="loadingPercent">
+
+	        0%
+
+	    </div>
+
+	</div>
+    <audio id="audio" src="audio/audio.mp3"></audio>
+	<div id="ruang-halaman" class="tempat-halaman">
+		<div class="halaman halaman-1">
+			<div class="kotak">
+				<h1 class="ml1">
+					<span class="text-wrapper">
+						<span class="line line1"></span>
+						<span class="letters">HAI BUNGAKU</span>
+						<span class="line line2"></span>
+					</span>
+				</h1>
+				<div class="tempat-tombol">
+					<button id="tombolMulaiSekarang" class="mulai-sekarang">Pencet Mbem</button>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="halaman halaman-11">
+		<div class="bg ubuntu"></div>
+		<div class="bg dawn"></div>
+		<div class="bg morning"></div>
+		<div class="bg noon"></div>
+		<div class="bg afternoon"></div>
+		<div class="bg sunset"></div>
+		<div class="bg evening"></div>
+		<div class="bg midnight"></div>
+		<div class="bg red"></div>
+		<div class="bg green"></div>
+		<div class="bg blue"></div>
+		<div class="bg custom"></div>
+		<div class="container">
+			<div class="quotes">
+				<p id="quotation"></p>
+				<p id="source"></p>
+			</div>
+		<ul class="kotak" id="floatingPhotos"></ul>
+			<div class="bulat">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="jam" id="time">
+				00:00:00
+			</div>
+			<div class="ucapan" id="quote"></div>
+			<div class="note">ngeng</div>
+			<div class="don">don</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
+		<script type="text/javascript">
+			gaming=false;
+			tombol=false;
+			let proposalShown = false;
+
+			async function loadingGame(){
+
+			const totalImage=25;
+
+			let loaded=0;
+
+			function update(){
+
+			loaded++;
+
+			const percent=Math.floor((loaded/totalImage)*100);
+
+			document.getElementById("loadingFill").style.width=percent+"%";
+
+			document.getElementById("loadingPercent").innerHTML=percent+"%";
+
+			}
+
+			const promises=[];
+
+			for(let i=1;i<=25;i++){
+
+			promises.push(
+
+			new Promise(resolve=>{
+
+			const img=new Image();
+
+			img.src=`img/${i}.png`;
+
+			img.onload=()=>{
+
+			update();
+
+			resolve();
+
+			};
+
+			img.onerror=()=>{
+
+			update();
+
+			resolve();
+
+			};
+
+			})
+
+			);
+
+			}
+
+			await Promise.all(promises);
+
+			// tampilkan COMPLETE
+			document.querySelector(".loadingTitle").innerHTML = "COMPLETE";
+
+			document.querySelector(".loadingSub").innerHTML = "Everything is Ready Bae❤️";
+
+			document.getElementById("loadingPercent").innerHTML = "100%";
+
+			// tunggu sebentar
+			setTimeout(()=>{
+
+			    document.getElementById("loadingScreen").style.opacity="0";
+
+			    setTimeout(()=>{
+
+			        document.getElementById("loadingScreen").remove();
+
+			    },800);
+
+			},1000);
+
+			}
+
+			function init(){
+				bro();
+				init_auto();
+				readMode();
+				readColor();
+				randomQuote();
+				specialEffects();
+			}
+			baffleEffect = baffle('.note', {
+			    characters: 'supercalifragilisticexpialidocious',
+			    speed: 150
+			});
+			function readMode(){
+				if(localStorage.getItem("mode")!=null){
+
+				}
+				switch(localStorage.getItem("mode")) {
+					case 'ubuntu':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio1").prop('checked',true);
+						ubuntu();
+						break;
+					case 'dawn':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio2").prop('checked',true);
+						dawn();
+						break;
+					case 'morning':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio3").prop('checked',true);
+						morning();
+						break;
+					case 'noon':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio4").prop('checked',true);
+						noon();
+						break;
+					case 'afternoon':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio5").prop('checked',true);
+						afternoon();
+						break;
+					case 'sunset':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio6").prop('checked',true);
+						sunset();
+						break;
+					case 'evening':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio7").prop('checked',true);
+						evening();
+						break;
+					case 'midnight':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio8").prop('checked',true);
+						midnight();
+						break;
+					case 'manual':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio10").prop('checked',true);
+						manual();
+						break;
+					case 'gaming1':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio9").prop('checked',true);
+						gaming1();
+						gaming=true;
+						break;
+					default:
+						
+				}
+			}
+			function readColor(){
+				if(localStorage.getItem("manualColor")==null){
+				}
+				else{
+					var color = $(".custom");
+					(color).css('background',localStorage.getItem("manualColor"));
+					$('#color-picker').val(localStorage.getItem("manualColor"));
+				}
+				colorpicker = $('#color-picker').spectrum({
+				  type: "text",
+				  showInput: "true",
+				  showAlpha: "false",
+				  showButtons: "false"
+				});
+				colorpicker.on('move.spectrum', function(e, tinycolor) {
+					var hexVal = tinycolor.toHexString();
+					var color = $(".custom");
+					color.css('background',hexVal);
+					console.log(hexVal);
+					localStorage.setItem("manualColor", hexVal);
+				 });
+			}
+			function onClickWarna(){
+				localStorage.setItem("mode", "manual");
+				nofill();
+				$('.kontrol input').prop('checked', false);
+				$("#customRadio10").prop('checked',true);
+				gaming=false;
+				manual();
+			}
+			function bro(){
+				namaku = $(".don").text();
+			    var hex, i;
+
+			    var result = "";
+			    for (i=0; i<namaku.length; i++) {
+			        hex = namaku.charCodeAt(i).toString(16);
+			        result += ("000"+hex).slice(-4);
+			    }
+			}
+			function specialEffects(){
+			}
+			function createNote(isi){
+
+			    $(".jam")
+			        .css("font-size","30pt")
+			        .css("bottom","calc(50% - 50px)");
+
+			    $(".ucapan").css("opacity","0");
+			    $(".quotes").css("opacity","0");
+			    $(".bulat")
+			        .css({
+			            "opacity":"0",
+			            "pointer-events":"none",
+			            "transform":"translate(-50%,50%) scale(0)"
+			        });
+			    $(".kotak li")
+			        .not(".special-photo")
+			        .fadeOut(2000);
+
+			    $(".special-photo")
+			        .addClass("special-move")
+			        .css("cursor","pointer");
+
+			    $(".special-photo")
+			        .off("click")
+			        .on("click",function(){
+
+			            startSpecialSequence();
+
+			        });
+
+			    setTimeout(function(){
+
+			        writeNote(isi);
+
+			    },4200);
+
+			}
+			function writeNote(isi){
+				$(".note").text(isi).css("opacity","1");
+
+				baffle('.note')
+					.reveal(2000)
+				    .start()
+				    .set({
+				        characters: '░░█ /<▒▓▒ ▒░▒█/ █/▒ ▒▓/█▒ ▓▒░▓ ██░ ▒░▓░ ▒░▓█',
+				        speed: 150
+				    });
+				    localStorage.setItem("manualColor", "#0079FF");
+			}
+
+
+			// ================= EASTER EGG SLIDESHOW =================
+
+			let specialSequenceStarted = false;
+
+			function startSpecialSequence(){
+
+			    if(specialSequenceStarted) return;
+
+			    specialSequenceStarted = true;
+
+			    const foto = document.querySelector(".special-photo");
+			    let img = foto.querySelector("img");
+
+if(!img){
+
+    img=document.createElement("img");
+
+    img.src="img/20.png";
+
+    img.style.width="100%";
+
+    img.style.height="100%";
+
+    img.style.objectFit="contain";
+
+    img.style.transition="opacity .4s ease";
+
+    foto.style.backgroundImage="none";
+
+    foto.appendChild(img);
+
+}
+
+			    const note = document.querySelector(".note");
+
+			    let current = 20;
+
+			    const slide = setInterval(()=>{
+
+			        current++;
+
+			       if(current<=25){
+
+    img.style.opacity="0";
+
+    setTimeout(()=>{
+
+        img.src=`img/${current}.png`;
+
+        img.onload=()=>{
+
+            img.style.opacity="1";
+
+        };
+
+    },120);
+
+}
+
+			        if(current >= 25){
+
+			            clearInterval(slide);
+
+
+			            setTimeout(()=>{
+
+			                note.style.opacity="0";
+
+			                setTimeout(()=>{
+
+			                    note.innerHTML=`
+			                    <div id="loveEmoji"
+								style="
+								font-size:17pt;
+								margin-bottom:60px;
+								opacity:0;
+								transition:1s;
+								">
+								❤️FLOO❤️
+								</div>
+
+								<div id="msg1"
+								style="
+								font-size:18pt;
+								line-height:1.7;
+								">
+								</div>
+
+								<div id="msg2"
+								style="
+								margin-top:25px;
+								font-size:16pt;
+								opacity:0;
+								transition:1s;
+								">
+								</div>
+								`;
+
+								setTimeout(()=>{
+
+								document.getElementById("loveEmoji").style.opacity="1";
+
+								},300);
+
+			                    note.style.opacity="1";
+
+			                    typing(
+			                        "msg1",
+			                        "Every picture tells the same story<br>I'm the lucky one",
+			                        45,
+			                        ()=>{
+
+			                            setTimeout(()=>{
+
+			                          document.getElementById("msg2").style.opacity="1";
+
+								typing(
+									"msg2",
+									"Your Floower Boy<br>Rhapzoka❤️",
+									50
+									);
+
+								$(".special-photo")
+								.off("click")
+								.one("click",function(){
+
+
+								
+
+								setTimeout(()=>{
+
+								note.style.opacity="0";
+
+								setTimeout(()=>{
+
+								note.innerHTML=`
+								<div id="finalMsg"
+								style="
+								font-size:18pt;
+								line-height:2;
+								">
+								There are no more surprises..
+								<br><br>
+								only more memories waiting to be made with you❤️
+								</div>
+								`;
+
+								note.style.opacity="1";
+
+
+								// tunggu 5 detik → ganti ending
+								setTimeout(()=>{
+
+								note.style.opacity="0";
+
+								setTimeout(()=>{
+
+								note.innerHTML=`
+								<div
+								id="loveEnding"
+
+								style="
+								font-size:22pt;
+								line-height:2;
+								margin-top:88px;
+								position:relative;
+								">
+								Coded with Care,
+								<br>
+								Finished with love,
+								<br>
+								all for U❤️
+								</div>
+								`;
+
+								note.style.opacity="1";
+
+
+								// tunggu 5 detik
+								setTimeout(()=>{
+
+								note.style.opacity="0";
+
+								setTimeout(()=>{
+
+								note.innerHTML=`
+								<div
+								id="lovePulse"
+
+								style="
+								font-size:40pt;
+								line-height:1.6;
+								margin-top:88px;
+								position:relative;
+								animation:
+								pulseLove .9s infinite;
+								">
+
+								I Love U Sayangkuh❤
+
+								</div>
+								`;
+
+								note.style.opacity="1";
+
+								startLoveRain();
+
+								},1200);
+
+								},5000);
+
+								},1200);
+
+								},7000); // tunggu 5 detik
+
+								},1200);
+
+								},3500);
+
+								});
+
+			                            },2000);
+
+			                        }
+			                    );
+
+			                },1500);
+
+			            },2000);
+
+			        }
+
+			    },3000);
+
+			}
+
+
+			function typing(id,text,speed,done){
+
+			    let i=0;
+
+			    const el=document.getElementById(id);
+
+			    function run(){
+
+			        if(i<text.length){
+
+			            if(text.substring(i,i+4)==="<br>"){
+			                el.innerHTML+="<br>";
+			                i+=4;
+			            }else{
+			                el.innerHTML+=text.charAt(i);
+			                i++;
+			            }
+
+			            setTimeout(run,speed);
+
+			        }else{
+
+			            if(done) done();
+
+			        }
+
+			    }
+
+			    run();
+
+			}
+
+			let rainLoop = null;
+
+			function startLoveRain(){
+
+			if(rainLoop) return;
+
+			rainLoop = setInterval(()=>{
+
+			const heart=document.createElement("div");
+
+			heart.className="rain-love";
+
+			heart.innerHTML="❤️";
+
+			heart.style.left=
+			Math.random()*100+"vw";
+
+			heart.style.fontSize=
+			(18+Math.random()*25)+"px";
+
+			heart.style.animationDuration=
+			(4+Math.random()*3)+"s";
+
+			document.body.appendChild(heart);
+
+			setTimeout(()=>{
+
+			heart.remove();
+
+			},7000);
+
+			},120);
+
+			}
+
+			document.getElementById("time").addEventListener("dblclick", function () {
+
+		    if(proposalShown) return;
+		    proposalShown = true;
+
+		    const jam = document.getElementById("time");
+
+		    jam.classList.add("heartbeat");
+
+		    let count = 0;
+
+		    const beat = setInterval(function(){
+
+		        count++;
+
+		        if(count >= 5){
+
+		            clearInterval(beat);
+
+		            jam.classList.remove("heartbeat");
+
+		            createNote("Bunga mekar dipagi hari, Cantiknya kalah sama bidadari ini >_<");
+
+		        }
+
+		    },800);
+
+			});
+
+
+
+
+
+			$(".panah").click(function(){
+				if (tombol==false){
+					$(".panah").css("transform","rotate(225deg)");
+					$(".kontrol").animate({left: "0px"});
+					tombol=true;
+				}else if (tombol==true){
+					$(".panah").css("transform","rotate(45deg)");
+					$(".kontrol").animate({left: "-220px"});
+					tombol=false;
+				}
+			});
+			auto=true;
+			cek=false;
+			$(".kontrol").click(function(){
+				gaming=false;
+				if($("#customRadio0").prop('checked')){
+					if(!cek){
+						init_auto();
+					}
+					auto=true;
+					localStorage.setItem("mode", "auto");
+					cek=true;
+				}
+				else{
+					auto=false;
+					cek=false;
+				}
+				if($("#customRadio1").prop('checked')){
+					ubuntu();
+					localStorage.setItem("mode", "ubuntu");
+				}
+				else if($("#customRadio2").prop('checked')){
+					dawn();
+					localStorage.setItem("mode", "dawn");
+				}
+				else if($("#customRadio3").prop('checked')){
+					morning();
+					localStorage.setItem("mode", "morning");
+				}
+				else if($("#customRadio4").prop('checked')){
+					noon();
+					localStorage.setItem("mode", "noon");
+				}
+				else if($("#customRadio5").prop('checked')){
+					afternoon();
+					localStorage.setItem("mode", "afternoon");
+				}
+				else if($("#customRadio6").prop('checked')){
+					sunset();
+					localStorage.setItem("mode", "sunset");
+				}
+				else if($("#customRadio7").prop('checked')){
+					evening();
+					localStorage.setItem("mode", "evening");
+				}
+				else if($("#customRadio8").prop('checked')){
+					midnight();
+					localStorage.setItem("mode", "midnight");
+				}
+				else if($("#customRadio10").prop('checked')){
+					manual();
+					localStorage.setItem("mode", "manual");
+				}
+				else if($("#customRadio9").prop('checked')){
+					gaming1();
+					localStorage.setItem("mode", "gaming1");
+					gaming=true;
+				}
+				if (gaming==false){
+					nofill();
+				}
+			});
+			function ubuntu(){
+				$(".ubuntu").animate({opacity:"1"},1000);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				white();
+			}
+			function dawn(){
+				$(".dawn").animate({opacity:"1"},1000);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				black();
+			}
+			function morning(){
+				$(".morning").animate({opacity:"1"},1000);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				black();
+			}
+			function noon(){
+				$(".noon").animate({opacity:"1"},1000);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				black();
+			}
+			function afternoon(){
+				$(".afternoon").animate({opacity:"1"},1000);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				black();
+			}
+			function sunset(){
+				$(".sunset").animate({opacity:"1"},1000);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				white();
+			}
+			function evening(){
+				$(".evening").animate({opacity:"1"},1000);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				white();
+			}
+			function midnight(){
+				$(".midnight").animate({opacity:"1"},1000);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				white();
+			}
+			function red(){
+				$(".jam").css("color","#F00");
+				$(".ucapan").css("color","#F00");
+				$(".bulat span").css("border-color","#F00");
+				$(".kotak li").css("background","#000");
+				$(".red").animate({opacity:"1"},1000);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				white();
+			}
+			function green(){
+				$(".jam").css("color","#0F0");
+				$(".ucapan").css("color","#0F0");
+				$(".bulat span").css("border-color","#0F0");
+				$(".kotak li").css("background","#000");
+				$(".green").animate({opacity:"1"},1000);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				white();
+			}
+			function blue(){
+				$(".jam").css("color","#00F");
+				$(".ucapan").css("color","#00F");
+				$(".bulat span").css("border-color","#00F");
+				$(".kotak li").css("background","#000");
+				$(".blue").animate({opacity:"1"},1000);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".custom").animate({opacity:"0"},500);
+				white();
+			}
+			function manual(){
+				$(".custom").animate({opacity:"1"},1000);
+				$(".midnight").animate({opacity:"0"},500);
+				$(".dawn").animate({opacity:"0"},500);
+				$(".ubuntu").animate({opacity:"0"},500);
+				$(".morning").animate({opacity:"0"},500);
+				$(".noon").animate({opacity:"0"},500);
+				$(".afternoon").animate({opacity:"0"},500);
+				$(".sunset").animate({opacity:"0"},500);
+				$(".evening").animate({opacity:"0"},500);
+				$(".red").animate({opacity:"0"},500);
+				$(".green").animate({opacity:"0"},500);
+				$(".blue").animate({opacity:"0"},500);
+				white();
+			}
+			warna=1;
+			function gaming1(){
+				if (gaming){
+					fillblack();
+					if (warna==1){
+						red();
+					}
+					else if (warna==2) {
+						green();
+					}
+					else if (warna==3) {
+						blue();
+					}
+					warna+=1;
+					if (warna==4){
+						warna=1;
+					}
+				}
+			}
+			setInterval(gaming1, 4000);
+			function black(){
+				$(".jam").css("color","#000");
+				$(".ucapan").css("color","#000");
+				$(".quotes").css("color","#000");
+				$(".quotes").css("text-shadow","0px 0px 10px #FFF");
+				$(".bulat span").css("border-color","#FFF");
+				$(".kotak li").css("background-color","transparent");
+			}
+			function fillblack(){
+				$(".bulat span").css("background","#000");
+			}
+			function nofill(){
+				$(".bulat span").css("background","unset");
+			}
+			function white(){
+				$(".jam").css("color","#FFF");
+				$(".ucapan").css("color","#FFF");
+				$(".quotes").css("color","#FFF");
+				$(".quotes").css("text-shadow","0px 0px 10px #000");
+				$(".bulat span").css("border-color","#FFF");
+				$(".kotak li").css("background-color","transparent");
+			}
+			function debug(){
+				console.log('debug');
+			}
+
+			var txt = 'Halo simp ku sayang';
+			var txt2 = 'txt';
+
+			function checkTime(i) {
+				if (i < 10) {
+						i = "0" + i;
+					}
+				return i;
+				}
+			var H;
+			var M;
+			var S;
+			var starting=true;
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+
+				H=h;
+				M=m;
+				S=s;
+
+				if (H<3){
+					txt='Hope ur nights treating u well, Bae';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
+				else if(H<9){
+					txt='Morning Bae, Start ur Day with that Sweet Smile of urs';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
+				else if(H<12){
+					txt='Morning, Be Happy Today Bae';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
+				else if(H<16){
+					txt='Afternoon Bae, Hope ur Afternoon as Cute as u';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
+				else if(H<19){
+					txt='Good evening Bae, Get some Rest okay?';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
+				else if(H<23){
+					txt='Good night Bae, Ending My Day Thinking of u';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
+				else if(H<=24){
+					txt='Time To Sleep Bae, See u in Dreamland';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
+				starting=false;
+
+				if (auto && m==0 && s==0){
+					if ((h>23) || (h<4)){
+						midnight();
+					}
+					else if(h<6){
+						dawn();
+					}
+					else if(h<9){
+						morning();
+					}
+					else if(h<17){
+						noon();
+					}
+					else if(h<18){
+						afternoon();
+					}
+					else if(h<19){
+						sunset();
+					}
+					else if(h<23){
+						evening();
+					}
+				}
+
+				// add a zero in front of numbers<10
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+				t = setTimeout(function() {
+				startTime()
+				}, 1000);
+			}
+			startTime();
+			function init_auto(){
+				if ((H>23) || (H<4)){
+					midnight();
+				}
+				else if(H<6){
+					dawn();
+				}
+				else if(H<9){
+					morning();
+				}
+				else if(H<17){
+					noon();
+				}
+				else if(H<18){
+					afternoon();
+				}
+				else if(H<19){
+					sunset();
+				}
+				else if(H<23){
+					evening();
+				}
+				else{
+					midnight();
+				}
+			}
+
+			const quotes = [
+			  {
+			    "quote": "Bunga",
+			    "source": "❤❤❤"
+			  },
+			  {
+			    "quote": "Bunga",
+			    "source": "❤❤❤"
+			  },
+			]
+			setInterval(randomQuote, 60000);
+			function randomQuote(){
+			  let random = quotes[Math.floor(Math.random() * quotes.length)];
+			  quotation.innerText = `"${random.quote}"`;
+			  source.innerText = random.source;
+			}
+
+			var i = 0;
+			
+			var speed = 50;
+			
+			function typeWriter() {
+				if (i < txt.length) {
+					var o = (i/txt.length*2);
+					var o = o.toFixed(0);
+					var o2 = o-1;
+					if (o2<0)
+						o2=0;
+					var o3 = String(o);
+					var p = "translate(-50%,50%) scale("+o2+")";
+					document.getElementById("quote").innerHTML += txt.charAt(i);
+					i++;
+					$(".jam").css("opacity",o3);
+					$(".bulat").css("transform",p).css("opacity",o2);
+					setTimeout(typeWriter, speed);
+				}
+			}
+			
+			typeWriter();
+		
+			// ================= FOTO MENGAMBANG =================
+			const totalFoto = 20; // jumlah gambar
+			const container = document.getElementById("floatingPhotos");
+
+			for(let i = 1; i <= totalFoto; i++){
+
+			    const li = document.createElement("li");
+			    if(i === 20){      // ganti 7 sesuai foto favoritmu
+			    li.classList.add("special-photo");
+			}
+			    li.style.backgroundImage = `url(img/${i}.png)`;
+			    li.style.backgroundSize = "contain";
+			    li.style.backgroundRepeat = "no-repeat";
+			    li.style.backgroundPosition = "center";
+
+			    const ukuran = 60 + Math.random() * 60;
+
+			    li.style.width = ukuran + "px";
+			    li.style.height = ukuran + "px";
+
+			    li.style.left = Math.random() * 90 + "%";
+			    li.style.animationDuration = (12 + Math.random() * 8) + "s";
+			    li.style.animationDelay = (Math.random() * 10) + "s";
+
+			    container.appendChild(li);
+			}
+
+			window.addEventListener("load",async()=>{
+
+			await loadingGame();
+
+			});
+
+		</script>			
+			</div>
+		</div>
+	</div>
+
+	<div class="pesan-ga-support-animasi">
+		<p>Browser Ga Support CSS Ganti Browser Dulu Ea</p>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/transisi.js"></script>
+	<script src="js/salju.js" type="text/javascript"></script>
+</body>
+
+</html>
